@@ -1,0 +1,44 @@
+{
+    "private": true,
+    "scripts": {
+        "prestart": "dotnet tool restore",
+        "start:ts": "dotnet fable watch ./Client --lang typescript -s --run vite",
+        "start": "dotnet fable watch ./Client -s --run vite",
+        "prebuild": "dotnet tool restore",
+        "build": "dotnet fable ./Client && webpack",
+        "test:live": "dotnet fable watch tests --run webpack-dev-server --config ./webpack.tests.js",
+        "build:test": "dotnet fable tests && webpack --config webpack.tests.js",
+        "pretest": "dotnet tool restore",
+        "test": "dotnet fable tests --outDir dist/tests && mocha dist/tests -r esm",
+
+        "ts2fable": "ts2fable node_modules/@mantine/core/lib/Input/input.d.ts ./Client/Input.fs",
+        "ts2fable:mantine": "ts2fable node_modules/@mantine/core/lib/index.d.ts ./Client/Mantine-2.fs -e @mantine",
+        "ts2fable:mantine-styles": "ts2fable node_modules/@mantine/styles/lib/index.d.ts ./Client/Styles.fs -e @mantine",
+        "ts2fable:mantine-styles2": "ts2fable node_modules/@mantine/styles/lib/index.d.ts ./Client/Styles2.fs",
+        
+        "dev": "vite",
+        "watch": "tsc --watch",
+        "preview": "vite preview",
+        "clean": "rimraf node_modules",
+        "storybook:build": "build-storybook",
+        "storybook": "start-storybook -s public -p 6006",
+        "format": "prettier --write Client/**/*.tsx Client/**/*.ts !package.json !Client/client/** !Client/shared-fs-api/** !Client/ts/** !Client/ts-glow-beta/**"
+    },
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "pixi.js": "7.2.2"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "1.3.2",
+        "@vitejs/plugin-react-refresh": "1.3.3",
+        "prettier": "2.3.0",
+        "react-icons": "4.3.1",
+        "rollup-plugin-typescript2": "0.30.0",
+        "typescript": "4.9.4",
+        "vite": "2.9.9",
+        "@mantine/core":"5.10.0",
+        "ts2fable": "0.7.1",
+        "react-query": "3.39.3"
+    }
+}

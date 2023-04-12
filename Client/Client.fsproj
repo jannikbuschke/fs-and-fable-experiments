@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>App</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ReactQuery.fs" />
+    <Compile Include="MantineCore.fs" />
+    <Compile Include="Extensions.fs" />
+    <Compile Include="Components.fs" />
+    <Compile Include="Main.fs" />
+<!--    <Compile Include="Mantine-2.fs" />-->
+<!--    <Compile Include="Styles.fs" />-->
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Remoting.Client" Version="7.25.0" />
+    <PackageReference Include="Fable.Promise" Version="3.2.0" />
+    <PackageReference Include="Feliz" Version="2.5.0" />
+    <PackageReference Include="Feliz.Router" Version="4.0.0" />
+    <!-- <PackageReference Include="Fable.DateFunctions" Version="3.9.0" /> -->
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.fsproj" />
+  </ItemGroup>
+</Project>
