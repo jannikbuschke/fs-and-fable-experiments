@@ -7,6 +7,7 @@
   <ItemGroup>
     <Compile Include="01-immutability-expressions-statements.fsx" />
     <Compile Include="02-async-vs-task.fsx" />
+    <Compile Include="03-functions.fsx" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
